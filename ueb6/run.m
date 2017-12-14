@@ -1,11 +1,11 @@
 % run.m
 %wir brauchen zahlen wie -1 * 10^12
 format long 
-k = [0:12]
-f = @(x) (-1 + 10.^x)
+k = [0:12];
+f = @(x) (-1 + 10.^-x)
 erg = []; %ergebnisse matrix
 for i=k
-	tmp = cat(2,i,generateData(i));
+	tmp = cat(2,i,generateData(f(i)));
 	erg = cat(1,tmp,erg);
 end
 
